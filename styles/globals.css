@@ -25,7 +25,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Keyframes for arrowMove animation */
+/* ArrowMove animation */
 @keyframes arrowMove {
   0% {
     transform: translateX(0px);
@@ -43,33 +43,116 @@ body {
 
 /* Apply the arrowMove animation */
 .animate-arrowMove {
-  animation: arrowMove 1s infinite ease-in-out;
+  animation: arrowMove 2s infinite ease-in-out;
 }
 
-/* Custom Utility Classes */
+/* Glass effect with white tint */
 @layer utilities {
-  /* “Glass” effect with a white tint */
   .glass-white {
     @apply bg-white/30 backdrop-blur-md border border-white/20;
   }
+}
 
-  /* Common rounding + shadow */
+/* COMMON UTILITISSS */
+@layer utilities {
   .shaded-round {
     @apply rounded-full shadow-md;
   }
-
-  /* A common light-gray border style */
   .border-light {
     @apply border border-gray-300;
   }
-
-  /* Hover scale with transition */
   .transition-scale {
     @apply transition-transform hover:scale-110;
   }
 
-  /* Icon button style: a small round white button with hover scale */
+  /* Icon button style: small, round, white btn with hover scale */
   .icon-btn {
     @apply flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-md border border-gray-300 hover:scale-110 transition-transform;
+  }
+}
+
+
+@layer components {
+  /* Navbar container */
+  .navbar {
+    @apply p-4 flex items-center justify-between w-full fixed top-0 left-0 bg-transparent z-50;
+  }
+
+  /* Hamburger menu icon */
+  .menu-icon {
+    @apply icon-btn;
+  }
+
+  /* Get the App*/
+  .get-the-app {
+    @apply hidden md:flex items-center bg-white px-4 py-1 rounded-full shadow-md border-light space-x-3;
+  }
+
+  /* location info  */
+  .location-info {
+    @apply flex items-center space-x-3 bg-white px-4 py-1 rounded-full shadow-md border-light;
+  }
+
+  /*  "glass" container in the nav */
+  .nav-center-glass {
+    @apply flex items-center space-x-4 glass-white px-6 py-2 rounded-full shadow-md;
+  }
+
+  /* Button with black background */
+  .btn-black {
+    @apply flex items-center px-4 py-2 text-white rounded-full shadow-md bg-gray-900 border border-gray-700;
+  }
+
+  /* White pills for About/Services on desktop */
+  .pill-desktop {
+    @apply hidden md:block px-4 py-2 bg-white text-black rounded-full shadow-md border-light;
+  }
+
+  /* White pills  */
+  .pill-desktop-icon {
+    @apply hidden md:flex px-4 py-2 items-center bg-white text-black rounded-full shadow-md border-light transition-scale;
+  }
+
+
+  /* Big  button with glass */
+  .glass-cta {
+    @apply relative flex items-center space-x-4 glass-white px-10 py-3 rounded-full shadow-md font-semibold overflow-hidden text-2xl;
+  }
+
+
+  /* Bottom right popup container */
+  .popup {
+    @apply absolute bottom-4 right-4 bg-white p-3 flex items-center space-x-3 rounded-full z-10;
+  }
+  .popup-close {
+    @apply p-1 rounded-full hover:bg-gray-200;
+  }
+
+
+  /* Panel container: position absolutely on right side */
+  .social-panel {
+    @apply absolute right-4 flex flex-col items-center space-y-2 z-50;
+  }
+  /* Variation for hero (centered around top-1/3) */
+  .social-panel-hero {
+    @apply top-1/3;
+  }
+  /* Variation for a normal vertical center  */
+  .social-panel-center {
+    @apply top-1/2 -translate-y-1/2;
+  }
+
+  /* Wrapper around social icon (white) */
+  .social-icon-white {
+    @apply p-2 glass-white rounded-full shadow-md;
+  }
+  /* Wrapper around each social icon (black) */
+  .social-icon-black {
+    @apply p-2 bg-black/20 backdrop-blur-md rounded-full shadow-md;
+  }
+
+  /* The wave at the bottom of the section */
+  .wave-svg {
+    @apply w-[120%] h-32 md:h-40 lg:h-48 text-gray-300;
   }
 }

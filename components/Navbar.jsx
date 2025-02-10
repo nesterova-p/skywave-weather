@@ -14,14 +14,11 @@ const NavBar = () => {
     const [unit, setUnit] = useState("°C");
 
     return (
-        <nav
-            className="p-4 flex items-center justify-between w-full
-        fixed top-0 left-0 bg-black bg-opacity-0 z-50"
-        >
+        <nav className="navbar">
             {/* Left Section */}
             <div className="flex items-center space-x-4 flex-shrink-0">
                 {/* Menu Icon (always visible) */}
-                <div className="icon-btn">
+                <div className="menu-icon">
                     <div className="space-y-1">
                         <div className="w-6 h-1 bg-black rounded"></div>
                         <div className="w-6 h-1 bg-black rounded"></div>
@@ -30,7 +27,7 @@ const NavBar = () => {
                 </div>
 
                 {/* Get The App (visible only on md and larger screens) */}
-                <div className="hidden md:flex items-center bg-white px-4 py-1 rounded-full shadow-md border-light space-x-3">
+                <div className="get-the-app">
                     <span className="text-gray-700 font-medium">Get The App</span>
                     <a
                         href="https://www.apple.com/app-store/"
@@ -53,9 +50,9 @@ const NavBar = () => {
             </div>
 
             {/* Center Section */}
-            <div className="flex items-center space-x-4 glass-white px-6 py-2 rounded-full shadow-md">
+            <div className="nav-center-glass">
                 {/* Location */}
-                <div className="flex items-center space-x-3 bg-white px-4 py-1 rounded-full shadow-md border-light">
+                <div className="location-info">
                     <FaLocationArrow size={20} className="text-black transition-scale" />
                     <span className="text-gray-700">NYC, United States 20{unit}</span>
                 </div>
@@ -75,18 +72,16 @@ const NavBar = () => {
             {/* Right Section */}
             <div className="flex items-center space-x-3 flex-shrink-0">
                 {/* SkyWave Logo/Button (always visible) */}
-                <button className="flex items-center px-4 py-2 text-white rounded-full shadow-md bg-gray-900 border border-gray-700">
+                <button className="btn-black">
                     SkyWave
                     <FaChevronDown className="ml-2" />
                 </button>
 
                 {/* About (visible only on md and larger screens) */}
-                <button className="hidden md:block px-4 py-2 bg-white text-black rounded-full shadow-md border-light">
-                    About
-                </button>
+                <button className="pill-desktop">About</button>
 
                 {/* Services (visible only on md and larger screens) */}
-                <button className="hidden md:flex px-4 py-2 items-center bg-white text-black rounded-full shadow-md border-light transition-scale">
+                <button className="pill-desktop-icon">
                     Services
                     <FaChevronDown className="ml-2" />
                 </button>

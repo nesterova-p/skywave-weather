@@ -1,16 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import {
-    FaArrowRight,
-    FaCloud,
-    FaTimes,
-    FaShareAlt,
-    FaInstagram,
-    FaAt,
-    FaFacebookF,
-} from "react-icons/fa";
+import { FaArrowRight, FaCloud, FaTimes } from "react-icons/fa";
 import { useState } from "react";
+// Import our new SocialPanel
+import SocialPanel from "@/components/SocialPanel";
 
 export default function HeroSection() {
     const [isPopupVisible, setIsPopupVisible] = useState(true);
@@ -52,16 +46,14 @@ export default function HeroSection() {
                 </svg>
             </div>
 
-            {/* Overlay */}
+            {/* Overlay Content */}
             <div className="flex flex-col items-center">
                 <h1 className="text-4xl md:text-6xl font-bold mb-6">
                     Precise weather <br /> precisely for you.
                 </h1>
 
-                {/* Animated Button */}
-                <button
-                    className="relative flex items-center space-x-4 glass-white px-10 py-3 rounded-full shadow-md font-semibold overflow-hidden group text-2xl"
-                >
+                {/* Animated Glass Button */}
+                <button className="glass-cta group">
                     <span className="text-white opacity-75">Let's start!</span>
                     <span className="relative flex items-center">
             <FaArrowRight className="text-white text-xl animate-arrowMove" />
@@ -91,52 +83,8 @@ export default function HeroSection() {
             </div>
             )}
 
-            {/* Right Social Panel */}
-            <div className="absolute  right-4 top-1/3 flex flex-col items-center space-y-2 z-50">
-                <a
-                    href="https://www.apple.com/app-store/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <div
-                        className="relative flex items-center space-x-2 glass-white px-3 py-3 rounded-full shadow-md font-semibold group"
-                    >
-                        <FaShareAlt className="text-white text-xl" />
-                    </div>
-                </a>
-
-                <div className="flex flex-col items-center space-y-2 glass-white p-1 rounded-full shadow-md">
-                    <a
-                        href="https://www.instagram.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <div className="p-2 glass-white rounded-full shadow-md">
-                            <FaInstagram className="text-white text-xl" />
-                        </div>
-                    </a>
-
-                    <a
-                        href="https://www.threads.net/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <div className="p-2 glass-white rounded-full shadow-md">
-                            <FaAt className="text-white text-xl" />
-                        </div>
-                    </a>
-
-                    <a
-                        href="https://www.facebook.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <div className="p-2 glass-white rounded-full shadow-md">
-                            <FaFacebookF className="text-white text-xl" />
-                        </div>
-                    </a>
-                </div>
-            </div>
+            {/* SocialPanel (light , hero) */}
+            <SocialPanel variant="light" positionVariant="hero" />
         </section>
     );
 }
