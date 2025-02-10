@@ -7,7 +7,8 @@ const NavBar = () => {
     const [unit, setUnit] = useState("°C");
 
     return (
-        <nav className="p-4 flex items-center justify-between w-full">
+        <nav className="p-4 flex items-center justify-between w-full
+        fixed top-0 left-0  bg-black bg-opacity-0  z-50">
             {/* Left Section */}
             <div className="flex items-center space-x-4 flex-shrink-0">
                 {/* Menu Icon (always visible) */}
@@ -34,10 +35,10 @@ const NavBar = () => {
                 </div>
             </div>
 
-            {/* Center Section (always visible) */}
+            {/* Center Section */}
             <div className="flex items-center space-x-4 bg-white/30 backdrop-blur-md px-6 py-2 rounded-full shadow-md border border-white/20">
                 {/* Location */}
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-3 bg-white px-4 py-1 rounded-full shadow-md border border-gray-300 ">
                     <FaLocationArrow size={20} className="text-black hover:scale-110 transition-transform" />
                     <span className="text-gray-700">NYC, United States 20{unit}</span>
                 </div>
