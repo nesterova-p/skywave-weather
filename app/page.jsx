@@ -5,6 +5,7 @@ const Home = ( ) => {
         <section className="w-full flex-center flex-col">
             <>
                 <HeroSection />
+                <p>vjhhhhhhhhhhhhhhhhhvjkdsbvjddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
             </>
 
 
