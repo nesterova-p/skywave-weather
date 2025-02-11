@@ -12,7 +12,6 @@ import {
 
 const NavBar = () => {
     const [unit, setUnit] = useState("°C");
-
     return (
         <nav className="navbar">
             {/* Left Section */}
@@ -25,6 +24,7 @@ const NavBar = () => {
                         <div className="w-6 h-1 bg-black rounded"></div>
                     </div>
                 </div>
+
 
                 {/* Get The App (visible only on md and larger screens) */}
                 <div className="get-the-app">

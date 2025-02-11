@@ -7,7 +7,9 @@ const Home = ( ) => {
             <>
                 <HeroSection />
                 <DontGuess/>
-                </>
+
+
+            </>
 
 
         </section>
