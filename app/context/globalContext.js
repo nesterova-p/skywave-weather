@@ -2,6 +2,7 @@
 
 import React, {createContext, useCallback, useContext, useEffect, useState} from "react";
 import axios from "axios";
+import defaultStates from "@/app/utils/defaultStates";
 
 // Create Contexts
 const GlobalContext = createContext();
@@ -14,6 +15,10 @@ export const GlobalContextProvider = ({ children }) => {
     const [airQuality, setAirQuality] = useState({});
     const [fiveDayForecast, setFiveDayForecast] = useState({});
     const [uvIndex, setUVIndex] = useState({});
+    const [geoCodedList, setGeoCodedList] = useState(defaultStates);
+    const [inputValue, setInputValue] = useState("");
+    const [activeCityCoordinates, setActiveCityCoordinates] = useState([52.2298, 21.0122]);
+
 
     const fetchForecast = async () => {
         try {
@@ -55,12 +60,24 @@ export const GlobalContextProvider = ({ children }) => {
         }
     }
 
+    const handleInput = (event) => {
+        const newValue = event.target.value;
+        setInputValue(newValue);
+
+        if (newValue === "") {
+            setGeoCodedList(defaultStates);
+        }
+    };
+
+
     useEffect(() => {
         fetchForecast();
         fetchAirQuality();
         fetchFiveDayForecast();
         fetchUVIndex();
     }, []);
+
+
 
     const contextValue = {
         forecast,
@@ -73,6 +90,12 @@ export const GlobalContextProvider = ({ children }) => {
         setFiveDayForecast,
         uvIndex,
         setUVIndex,
+        geoCodedList,
+        setGeoCodedList,
+        inputValue,
+        handleInput,
+        activeCityCoordinates,
+        setActiveCityCoordinates,
     }
 
     return (

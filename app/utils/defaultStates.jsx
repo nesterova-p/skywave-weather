@@ -1,4 +1,4 @@
-const defaultCities = [
+const defaultStates  = [
     {
         name: "Kyiv",
         country: "UA",
@@ -36,4 +36,4 @@ const defaultCities = [
     },
 ];
 
-export default defaultCities;
+export default defaultStates ;

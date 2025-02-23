@@ -10,6 +10,7 @@ import {
     FaChevronDown,
 } from "react-icons/fa";
 import {useGlobalContext} from "@/app/context/globalContext";
+import SearchBar from "@/components/ui/SearchBar";
 
 const NavBar = () => {
     const {unit, setUnit} = useGlobalContext();
@@ -42,7 +43,7 @@ const NavBar = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaGooglePlay size={20} className="text-black transition-scale ml-2" />
+                        <FaGooglePlay size={20} className="text-black transition-scale " />
                     </a>
                     <button className="transition-scale">
                         <FaDownload size={18} className="text-black" />
@@ -53,14 +54,7 @@ const NavBar = () => {
             {/* Center Section */}
             <div className="nav-center-glass">
                 {/* Location */}
-                <div className="location-info">
-                    <FaLocationArrow size={20} className="text-black transition-scale" />
-                    <span className="text-gray-700">NYC, United States 20{unit}</span>
-                </div>
-                {/* Search Button */}
-                <button className="icon-btn">
-                    <FaSearch className="text-black" size={18} />
-                </button>
+                <SearchBar/>
                 {/* Temperature */}
                 <button
                     className="icon-btn font-bold"
