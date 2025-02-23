@@ -3,8 +3,8 @@ const defaultCities = [
         name: "Kyiv",
         country: "UA",
         state: "Kyiv City",
-        lat: 50.4501,
-        lon: 30.5234,
+        lat: 50.4333,
+        lon: 30.5167,
     },
     {
         name: "Warsaw",

@@ -1,5 +1,6 @@
 import HeroSection from '../components/HeroSection';
 import DontGuess from "@/components/DontGuess";
+import Forecast from "@/components/Forecast";
 
 const Home = ( ) => {
     return (
@@ -7,7 +8,7 @@ const Home = ( ) => {
             <>
                 <HeroSection />
                 <DontGuess/>
-
+                <Forecast/>
 
             </>
 

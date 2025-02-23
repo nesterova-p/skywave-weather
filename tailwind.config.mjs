@@ -8,6 +8,7 @@ export default {
   ],
   theme: {
   	extend: {
+
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -54,8 +55,13 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
-  	}
+  		},
+		screens: {
+			"sm-2": "581px",
+			"md-2": "1100px",
+			"2xl": "1400px",
+		}
+  	},
   },
   plugins: [require("tailwindcss-animate")],
 };

@@ -87,7 +87,7 @@ body {
 
   /* Button with black background */
   .btn-black {
-    @apply flex items-center px-4 py-2 text-white rounded-full shadow-md bg-gray-900 border border-gray-700;
+    @apply flex items-center px-4 py-2 text-white rounded-full shadow-md bg-black;
   }
 
   /* White pills for About/Services on desktop */
@@ -144,6 +144,18 @@ body {
   }
 }
 
+/* Progress Bar for Air Pollution*/
+.progress{
+  background: linear-gradient(
+          90deg,
+          rgb(56, 131, 136) 0%,
+          rgb(74, 191, 189) 20%,
+          rgb(138, 177, 125) 40%,
+          rgb(233, 196, 106) 60%,
+          rgb(244, 162, 97) 80%,
+          rgb(231, 111, 81) 100%
+  );
+}
 
 @layer base {
   :root {
@@ -205,6 +217,19 @@ body {
 @layer base {
   * {
     @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;

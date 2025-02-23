@@ -9,9 +9,10 @@ import {
     FaLocationArrow,
     FaChevronDown,
 } from "react-icons/fa";
+import {useGlobalContext} from "@/app/context/globalContext";
 
 const NavBar = () => {
-    const [unit, setUnit] = useState("°C");
+    const {unit, setUnit} = useGlobalContext();
     return (
         <nav className="navbar">
             {/* Left Section */}
