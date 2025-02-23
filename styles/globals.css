@@ -145,7 +145,7 @@ body {
 }
 
 /* Progress Bar for Air Pollution*/
-.progress{
+.progress, .temperature{
   background: linear-gradient(
           90deg,
           rgb(56, 131, 136) 0%,
@@ -153,6 +153,15 @@ body {
           rgb(138, 177, 125) 40%,
           rgb(233, 196, 106) 60%,
           rgb(244, 162, 97) 80%,
+          rgb(231, 111, 81) 100%
+  );
+}
+
+.temperature{
+  background: linear-gradient(
+          90deg,
+          rgb(56, 131, 136) 0%,
+          rgb(233, 196, 106) 50%,
           rgb(231, 111, 81) 100%
   );
 }

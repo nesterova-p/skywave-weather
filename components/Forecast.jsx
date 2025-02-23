@@ -9,6 +9,9 @@ import FeelsLike from "@/components/ui/FeelsLike"
 import Humidity from "@/components/ui/Humidity";
 import Visibility from "@/components/ui/Visibility";
 import Pressure from "@/components/ui/Pressure";
+import Map from "../components/ui/Map";
+import LargeCities from "@/components/ui/LargeCities";
+import FiveDayForecast from "@/components/ui/FiveDayForecast";
 
 export default function Forecast() {
     return(
@@ -16,6 +19,7 @@ export default function Forecast() {
         <div className={"pb-4 flex flex-col gap-4 md:flex-row"}>
             <div className={"flex flex-col gap-4 w-full min-w-[18rem] md:w-[35rem]"}>
                 <Temperature/>
+                <FiveDayForecast/>
             </div>
             <div className={"flex flex-col w-full"}>
                 <div className={"instruments grid h-full gap-4 col-span-full sm-2:col-span-2 lg:grid-cols-3 xl:grid-cols-4"}>
@@ -29,6 +33,10 @@ export default function Forecast() {
                     <Humidity/>
                     <Visibility/>
                     <Pressure/>
+                </div>
+                <div className={"mapbox-ct mt-4 flex gap-4 "}>
+                    <Map/>
+                    <LargeCities/>
                 </div>
             </div>
         </div>
