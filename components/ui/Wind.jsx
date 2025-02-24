@@ -12,7 +12,7 @@ export default function Wind() {
     const windDirection = forecast?.wind?.deg;
 
     if (!windSpeed || !windDirection) {
-        return <Skeleton className="h-[12rem] w-full col-span-2 md:col-span-4" />;
+        return <Skeleton className="flex h-[12rem] w-full p-4 border rounded-lg shadow-md dark:shadow-none" />;
     }
 
     return (

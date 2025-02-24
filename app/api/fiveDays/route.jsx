@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import axios from "axios";
 
-export async function GET() {
+export async function GET(req) {
     try {
-        const lat = 52.2298;
-        const lon = 21.0122;
+        const searchParams = req.nextUrl.searchParams;
+        const lat = searchParams.get("lat");
+        const lon = searchParams.get("lon");
+
         const apiKey = process.env.OPENWEATHERMAP_API_KEY;
 
         if (!apiKey) {

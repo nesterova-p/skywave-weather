@@ -31,8 +31,8 @@ const defaultStates  = [
         name: "Berlin",
         country: "DE",
         state: "Berlin",
-        lat: 52.5200,
-        lon: 13.4050,
+        lat: 52.52437,
+        lon: 13.41053,
     },
 ];
 

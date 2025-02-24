@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import axios from "axios";
 
-export async function GET() {
+export async function GET(req) {
     try {
-        const lat = 52.2298;
-        const lon = 21.0122;
+        const searchParams = req.nextUrl.searchParams;
+        const lat = searchParams.get("lat");
+        const lon = searchParams.get("lon");
+
 
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=uv_index_max,uv_index_clear_sky_max&timezone=auto&forecast_days=1`;
 

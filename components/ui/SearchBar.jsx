@@ -2,12 +2,30 @@
 import React, { useState } from "react";
 import { FaLocationArrow, FaSearch } from "react-icons/fa";
 import { useGlobalContext } from "@/app/context/globalContext";
-import {Dialog, DialogContent, DialogTitle, DialogTrigger,} from "@/components/ui/dialog";
-import {Command, CommandInput, CommandList, CommandGroup, CommandItem, CommandEmpty,} from "@/components/ui/command";
+import {
+    Dialog,
+    DialogContent,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+    Command,
+    CommandInput,
+    CommandList,
+    CommandGroup,
+    CommandItem,
+    CommandEmpty,
+} from "@/components/ui/command";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export default function SearchBar() {
-    const {unit, geoCodedList, inputValue, handleInput, setActiveCityCoordinates} = useGlobalContext();
+    const {
+        unit,
+        geoCodedList,
+        inputValue,
+        handleInput,
+        setActiveCityCoordinates,
+    } = useGlobalContext();
 
     const [hoverIndex, setHoverIndex] = useState(0);
 
@@ -36,18 +54,16 @@ export default function SearchBar() {
                         <VisuallyHidden>Search for a City</VisuallyHidden>
                     </DialogTitle>
 
-                    {/* Command container */}
-                    <Command className="rounded-lg border shadow-md">
 
+                    <Command shouldFilter={false} className="rounded-lg border shadow-md">
                         <CommandInput
                             placeholder="Type a city name..."
                             value={inputValue}
                             onValueChange={(value) => handleInput({ target: { value } })}
                         />
 
-
                         <CommandList>
-                            {/* If no results */}
+
                             <CommandEmpty>No Results</CommandEmpty>
 
                             <CommandGroup heading="Suggestions">
@@ -62,7 +78,9 @@ export default function SearchBar() {
                                                 hoverIndex === index ? "bg-accent" : ""
                                             }`}
                                         >
-                                            {name}, {state && state + ", "} {country}
+                                            {name}
+                                            {state ? `, ${state}` : ""}
+                                            {country ? `, ${country}` : ""}
                                         </CommandItem>
                                     );
                                 })}
