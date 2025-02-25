@@ -1,17 +1,32 @@
+"use client";
 import defaultStates from "@/app/utils/defaultStates";
+import {useGlobalContext} from "@/app/context/globalContext";
 
 
 export default function LargeCities() {
+    const {setActiveCityCoordinates} = useGlobalContext();
+
+    const getClickedCords = (lat, lon) => {
+        setActiveCityCoordinates([lat, lon]);
+
+    }
+
     return (
-        <div className={"state flex flex-col gap-3 flex-1"}>
-            <h2 className={"flex gap-2 items-center font-medium"}>
-                Top Large Cities
+        <div className={"state gap-3 flex-1 p-6 flex flex-col justify-between  h-[420px]"}>
+            <h2 className={"flex items-center font-medium mb-2 "}>
+                <b>Top Large Cities</b>
             </h2>
             <div className={"flex flex-col gap-4"}>
                 {defaultStates.map((state, index) => {
                     return (
-                        <div key={index} className={"border rounded-lg cursor-pointer  shadow-sm dark:shadow-none "}>
-                            <p className={"px-6 py-4"}>{state.name}</p>
+                        <div
+                            key={index}
+                            className="border rounded-lg cursor-pointer shadow-md dark:shadow-none"
+                            onClick={() => {
+                                getClickedCords(state.lat, state.lon);
+                            }}
+                        >
+                            <p className="px-6 py-4">{state.name}</p>
                         </div>
                     )
                 })}

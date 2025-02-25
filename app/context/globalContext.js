@@ -22,6 +22,7 @@ export const GlobalContextProvider = ({ children }) => {
 
     const [activeCityCoordinates, setActiveCityCoordinates] = useState([52.2298, 21.0122]);
     const [selectedCityLabel, setSelectedCityLabel] = useState("Warsaw, Masovian Voivodeship, PL");
+    const [selectedCityLabelShort, setSelectedCityLabelShort] = useState("Warsaw, PL");
 
     const fetchForecast = async (lat, lon) => {
         try {
@@ -122,7 +123,9 @@ export const GlobalContextProvider = ({ children }) => {
         activeCityCoordinates,
         setActiveCityCoordinates,
         selectedCityLabel,
-        setSelectedCityLabel
+        setSelectedCityLabel,
+        selectedCityLabelShort,
+        setSelectedCityLabelShort,
     }
 
     return (

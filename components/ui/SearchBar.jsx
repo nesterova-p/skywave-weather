@@ -30,6 +30,8 @@ export default function SearchBar() {
         selectedCityLabel,
         setSelectedCityLabel,
         setActiveCityCoordinates,
+        selectedCityLabelShort,
+        setSelectedCityLabelShort
     } = useGlobalContext();
 
     const [open, setOpen] = useState(false);
@@ -56,9 +58,12 @@ export default function SearchBar() {
     const handleSelection = (item) => {
         const { name, state, country, lat, lon } = item;
 
-        const label = [name, state, country].filter(Boolean).join(", ");
+        const labelLong = [name, state, country].filter(Boolean).join(", ");
+        const labelShort = [name, state, country].filter(Boolean).join(", ");
 
-        setSelectedCityLabel(label);
+        setSelectedCityLabel(labelLong);
+        setSelectedCityLabelShort(labelShort);
+
         setActiveCityCoordinates([lat, lon]);
         setOpen(false);
     };
@@ -70,7 +75,13 @@ export default function SearchBar() {
                 <FaLocationArrow size={18} className="text-black" />
                 {cityTemp !== null ? (
                     <span className="text-gray-700 font-medium">
-                            {selectedCityLabel || "Loading..."}, {cityTemp}{unit}
+                            <span className="hidden sm:inline">
+                                {selectedCityLabel}
+                            </span>
+                            <span className="inline sm:hidden">
+                                {selectedCityLabelShort}
+                            </span>
+                            , {cityTemp}{unit}
                     </span>
                 ) :
                 (

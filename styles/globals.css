@@ -166,6 +166,10 @@ body {
   );
 }
 
+.leaflet-container {
+  z-index: 0 !important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

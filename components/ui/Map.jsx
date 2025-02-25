@@ -1,8 +1,9 @@
 "use client";
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "@/app/context/globalContext";
+import {Skeleton} from "@/components/ui/skeleton";
 
 function FlyToActiveCity({ cityCoord }) {
     const map = useMap();
@@ -26,16 +27,16 @@ export default function Mapbox() {
     const cityCoord = forecast?.coord;
 
     if (!forecast || !cityCoord) {
-        return <div><h1>Loading...</h1></div>;
+        return <Skeleton className="flex-1 h-[420px] w-full p-4 border rounded-lg shadow-md dark:shadow-none" />;
     }
 
     return (
-        <div className="flex-1 basis-[50%] border rounded-lg shadow-md dark:shadow-none h-[400px]">
+        <div className="flex-1 basis-[50%] border rounded-lg shadow-md dark:shadow-none h-[420px]">
             <MapContainer
                 center={[cityCoord.lat, cityCoord.lon]}
                 zoom={13}
                 scrollWheelZoom={true}
-                className="rounded-lg"
+                className="rounded-lg relative z-0"
                 style={{ height: "100%", width: "100%" }}
             >
                 <TileLayer
