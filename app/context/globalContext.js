@@ -21,7 +21,7 @@ export const GlobalContextProvider = ({ children }) => {
     const [inputValue, setInputValue] = useState("");
 
     const [activeCityCoordinates, setActiveCityCoordinates] = useState([52.2298, 21.0122]);
-
+    const [selectedCityLabel, setSelectedCityLabel] = useState("Warsaw, Masovian Voivodeship, PL");
 
     const fetchForecast = async (lat, lon) => {
         try {
@@ -65,9 +65,7 @@ export const GlobalContextProvider = ({ children }) => {
 
     const fetchGeoCodedList = async (search) => {
         try {
-            console.log("Requesting geocode for city:", search);
             const res = await axios.get(`/api/geocoded?search=${search}`);
-            console.log("Received geocode data:", res.data);
             setGeoCodedList(res.data);
         } catch (error) {
             console.log("Error fetching geocoded list: ", error.message);
@@ -123,6 +121,8 @@ export const GlobalContextProvider = ({ children }) => {
         handleInput,
         activeCityCoordinates,
         setActiveCityCoordinates,
+        selectedCityLabel,
+        setSelectedCityLabel
     }
 
     return (
