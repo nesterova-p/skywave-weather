@@ -20,7 +20,9 @@ const DontGuess = () => {
                     Rely on Clime for year-round weather forecasts for your location and across the world.
                 </p>
 
-                <button className="relative flex items-center space-x-3 bg-black text-white px-6 py-3 rounded-full shadow-md hover:bg-gray-900 transition font-semibold text-lg mb-4 z-10">
+                <button
+                    onClick={() => {document.getElementById("benefits-section").scrollIntoView({"behavior": "smooth"})}}
+                    className="relative flex items-center space-x-3 bg-black text-white px-6 py-3 rounded-full shadow-md hover:bg-gray-900 transition font-semibold text-lg mb-4 z-10">
                     <span>Explore benefits</span>
                     <span className="relative flex items-center">
             <FaArrowRight className="text-blue-200 text-xl animate-arrowMove" />
@@ -42,7 +44,6 @@ const DontGuess = () => {
                 </svg>
             </div>
 
-            {/* Social Panel (dark variant, or whichever you want) */}
             <SocialPanel variant="dark" positionVariant="center" />
         </section>
     );

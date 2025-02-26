@@ -33,8 +33,8 @@ export default function NavBar() {
                     </div>
                 </div>
 
-                {/* Get The App (visible only on md+ by default)
-            Hidden if menuOpen is true (on md+ screens) */}
+                {/* Get The App (visible only on md+ by default); vertical dropdown at the end of the file */}
+
                 <div
                     className={`get-the-app hidden md:flex items-center bg-white px-4 py-1 rounded-full shadow-md border border-gray-300 space-x-3 transition-all ${
                         menuOpen ? "md:hidden" : ""
@@ -62,7 +62,7 @@ export default function NavBar() {
             </div>
 
             {/* Center Section */}
-            <div className="nav-center-glass">
+            <div className="nav-center-glass ">
                 <SearchBar />
                 {/* Temperature Toggle */}
                 <button

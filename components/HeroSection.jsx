@@ -53,7 +53,10 @@ export default function HeroSection() {
                 </h1>
 
                 {/* Animated Glass Button */}
-                <button className="glass-cta group">
+                <button className="glass-cta group"
+                        onClick={() => document.getElementById("forecast-section").scrollIntoView({ behavior: "smooth" })}
+
+                >
                     <span className="text-white opacity-75">Let's start!</span>
                     <span className="relative flex items-center">
             <FaArrowRight className="text-white text-xl animate-arrowMove" />

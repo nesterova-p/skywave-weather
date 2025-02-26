@@ -8,7 +8,7 @@ const Home = ( ) => {
             <>
                 <HeroSection />
                 <DontGuess/>
-                <Forecast/>
+                <Forecast />
 
             </>
 

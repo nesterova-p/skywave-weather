@@ -82,7 +82,7 @@ body {
 
   /*  "glass" container in the nav */
   .nav-center-glass {
-    @apply flex items-center space-x-4 glass-white px-6 py-2 rounded-full shadow-md;
+    @apply flex items-center space-x-4 glass-white px-6 py-2 rounded-full shadow-md absolute left-1/2 transform -translate-x-1/2 ;
   }
 
   /* Button with black background */
