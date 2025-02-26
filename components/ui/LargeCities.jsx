@@ -12,11 +12,11 @@ export default function LargeCities() {
     }
 
     return (
-        <div className={"state gap-3 flex-1 p-6 flex flex-col justify-between  h-[420px]"}>
-            <h2 className={"flex items-center font-medium mb-2 "}>
+        <div className={"border rounded-lg flex flex-col justify-between shadow-md dark:shadow-none p-6  h-[420px]"}>
+            <h2 className={"flex items-center font-medium mb-2 text-lg "}>
                 <b>Top Large Cities</b>
             </h2>
-            <div className={"flex flex-col gap-4"}>
+            <div className={"flex flex-col gap-3"}>
                 {defaultStates.map((state, index) => {
                     return (
                         <div
