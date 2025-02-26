@@ -1,25 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import {
     FaApple,
     FaGooglePlay,
     FaDownload,
     FaSearch,
-    FaLocationArrow,
-    FaChevronDown,
+    FaChevronDown, FaWind,
 } from "react-icons/fa";
-import {useGlobalContext} from "@/app/context/globalContext";
+import { useGlobalContext } from "@/app/context/globalContext";
 import SearchBar from "@/components/ui/SearchBar";
 
-const NavBar = () => {
-    const {unit, setUnit} = useGlobalContext();
+export default function NavBar() {
+    const { unit, setUnit } = useGlobalContext();
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    // Toggle menu open/close
+    const handleMenuClick = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return (
         <nav className="navbar">
             {/* Left Section */}
             <div className="flex items-center space-x-4 flex-shrink-0">
                 {/* Menu Icon (always visible) */}
-                <div className="menu-icon">
+                <div className="menu-icon cursor-pointer" onClick={handleMenuClick}>
                     <div className="space-y-1">
                         <div className="w-6 h-1 bg-black rounded"></div>
                         <div className="w-6 h-1 bg-black rounded"></div>
@@ -27,25 +33,29 @@ const NavBar = () => {
                     </div>
                 </div>
 
-
-                {/* Get The App (visible only on md and larger screens) */}
-                <div className="get-the-app">
+                {/* Get The App (visible only on md+ by default)
+            Hidden if menuOpen is true (on md+ screens) */}
+                <div
+                    className={`get-the-app hidden md:flex items-center bg-white px-4 py-1 rounded-full shadow-md border border-gray-300 space-x-3 transition-all ${
+                        menuOpen ? "md:hidden" : ""
+                    }`}
+                >
                     <span className="text-gray-700 font-medium">Get The App</span>
                     <a
                         href="https://www.apple.com/app-store/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaApple size={25} className="text-black transition-scale" />
+                        <FaApple size={25} className="text-black transition-transform" />
                     </a>
                     <a
                         href="https://play.google.com/store"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaGooglePlay size={20} className="text-black transition-scale " />
+                        <FaGooglePlay size={20} className="text-black transition-transform" />
                     </a>
-                    <button className="transition-scale">
+                    <button className="transition-transform">
                         <FaDownload size={18} className="text-black" />
                     </button>
                 </div>
@@ -53,9 +63,8 @@ const NavBar = () => {
 
             {/* Center Section */}
             <div className="nav-center-glass">
-                {/* Location */}
-                <SearchBar/>
-                {/* Temperature */}
+                <SearchBar />
+                {/* Temperature Toggle */}
                 <button
                     className="icon-btn font-bold"
                     onClick={() => setUnit(unit === "°C" ? "°F" : "°C")}
@@ -66,23 +75,45 @@ const NavBar = () => {
 
             {/* Right Section */}
             <div className="flex items-center space-x-3 flex-shrink-0">
-                {/* SkyWave Logo/Button (always visible) */}
+                {/* SkyWave Logo/Button */}
                 <button className="btn-black">
                     SkyWave
-                    <FaChevronDown className="ml-2" />
+                    <FaWind className="ml-2" />
                 </button>
-
-                {/* About (visible only on md and larger screens) */}
-                <button className="pill-desktop">About</button>
-
-                {/* Services (visible only on md and larger screens) */}
+                {/* About (md+) */}
+                <button className="pill-desktop-icon" onClick={() => window.open("https://github.com/nott-po/skywave-weather", "_blank")}>
+                    About
+                </button>
+                {/* Services (md+) */}
                 <button className="pill-desktop-icon">
-                    Services
+                    Theme
                     <FaChevronDown className="ml-2" />
                 </button>
             </div>
+
+            {/*  Mobile vertical dropdown with "Get The App"  */}
+            {menuOpen && (
+                <div className="md:hidden absolute top-[5rem] left-4 glass-white border border-gray-300 rounded-full shadow-lg p-2 pb-3 flex flex-col items-center gap-4 ">
+                    <a
+                        href="https://www.apple.com/app-store/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaApple size={25} className="text-black transition-transform" />
+                    </a>
+                    <a
+                        href="https://play.google.com/store"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaGooglePlay size={20} className="text-black transition-transform" />
+                    </a>
+                    <button className="transition-transform">
+                        <FaDownload size={18} className="text-black" />
+                    </button>
+                </div>
+            )}
+
         </nav>
     );
-};
-
-export default NavBar;
+}
