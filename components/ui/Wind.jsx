@@ -27,8 +27,10 @@ export default function Wind() {
                     <Image
                         src="/images/compass_body.svg"
                         alt="compass"
+                        style={{ width: "auto", height: "auto" }}
                         width={110}
                         height={110}
+                        priority={false}
                     />
                     <Image
                         src="/images/compass_arrow.svg"
@@ -37,6 +39,7 @@ export default function Wind() {
                         style={{
                             transform: `rotate(${windDirection}deg) translateX(-50%)`,
                             height: "100%",
+                            width: "auto",
                         }}
                         width={11}
                         height={11}
