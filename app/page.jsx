@@ -1,6 +1,7 @@
 import HeroSection from '../components/HeroSection';
 import DontGuess from "@/components/DontGuess";
 import Forecast from "@/components/Forecast";
+import Benefits from "../components/Benefits";
 
 const Home = ( ) => {
     return (
@@ -9,7 +10,7 @@ const Home = ( ) => {
                 <HeroSection />
                 <DontGuess/>
                 <Forecast />
-
+                <Benefits/>
             </>
 
 
