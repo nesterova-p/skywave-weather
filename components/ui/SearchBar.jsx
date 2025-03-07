@@ -30,8 +30,6 @@ export default function SearchBar() {
         selectedCityLabel,
         setSelectedCityLabel,
         setActiveCityCoordinates,
-        selectedCityLabelShort,
-        setSelectedCityLabelShort
     } = useGlobalContext();
 
     const [open, setOpen] = useState(false);
@@ -58,12 +56,9 @@ export default function SearchBar() {
     const handleSelection = (item) => {
         const { name, state, country, lat, lon } = item;
 
-        const labelLong = [name, state, country].filter(Boolean).join(", ");
-        const labelShort = [name, state, country].filter(Boolean).join(", ");
+        const label = [name, state, country].filter(Boolean).join(", ");
 
-        setSelectedCityLabel(labelLong);
-        setSelectedCityLabelShort(labelShort);
-
+        setSelectedCityLabel(label);
         setActiveCityCoordinates([lat, lon]);
         setOpen(false);
     };
@@ -74,19 +69,13 @@ export default function SearchBar() {
             <div className="location-info bg-white px-4 py-2 rounded-full shadow-md flex items-center gap-2">
                 <FaLocationArrow size={18} className="text-black" />
                 {cityTemp !== null ? (
-                    <span className="text-gray-700 font-medium">
-                            <span className="hidden sm:inline">
-                                {selectedCityLabel}
-                            </span>
-                            <span className="inline sm:hidden">
-                                {selectedCityLabelShort}
-                            </span>
-                            , {cityTemp}{unit}
+                        <span className="text-gray-700 font-medium">
+                            {selectedCityLabel || "Loading..."}, {cityTemp}{unit}
                     </span>
-                ) :
-                (
-                    <span className="text-gray-700">No Data</span>
-                )}
+                    ) :
+                    (
+                        <span className="text-gray-700">No Data</span>
+                    )}
             </div>
 
             {/* Search Button / Dialog */}
@@ -97,7 +86,7 @@ export default function SearchBar() {
                     </button>
                 </DialogTrigger>
 
-                <DialogContent className="p-0 w-[400px] bg-white rounded-lg shadow-xl border">
+                <DialogContent className="w-[400px] bg-white rounded-lg shadow-xl border ">
                     <DialogTitle>
                         <VisuallyHidden>Search for a City</VisuallyHidden>
                     </DialogTitle>
@@ -107,7 +96,7 @@ export default function SearchBar() {
                             placeholder="Type a city name..."
                             value={inputValue}
                             onValueChange={(value) => handleInput({ target: { value } })}
-                            className="w-full p-2 border-b focus:outline-none"
+                            className="w-full border-b focus:outline-none"
                         />
 
                         <CommandList className="max-h-60 overflow-y-auto">
@@ -115,7 +104,7 @@ export default function SearchBar() {
                                 No Results
                             </CommandEmpty>
 
-                            <CommandGroup heading="Suggestions" className="p-2">
+                            <CommandGroup heading="Suggestions" >
                                 {geoCodedList?.map((item, index) => {
                                     const { name, state, country } = item;
                                     return (
@@ -123,9 +112,9 @@ export default function SearchBar() {
                                             <CommandItem
                                                 onSelect={() => handleSelection(item)}
                                                 onMouseEnter={() => setHoverIndex(index)}
-                                                className={`cursor-pointer px-3 py-2 rounded-md flex justify-between items-center ${
-                                                    hoverIndex === index ? "bg-gray-100" : ""
-                                                }`}
+                                                className={`cursor-pointer w-full px-3 py-2 rounded-md block ${
+                                                      hoverIndex === index ? "bg-gray-100" : ""
+                                                         }`}
                                             >
                         <span>
                           {name}
