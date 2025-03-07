@@ -84,16 +84,16 @@ export default function Benefits() {
 
             {/* 4 */}
             <div
-                className="absolute w-[20%] h-[200px] left-[60%] top-[60px] bg-gray-200 rounded-xl shadow-lg p-4
+                className="absolute w-[20%] h-[200px] left-[60%] top-[60px]  rounded-xl shadow-lg p-4
                    flex flex-col justify-center items-center bg-teal-800"
             >
-                <div className="relative z-10 flex flex-col items-center space-y-3 text-white ">
-                    <div className={"border border-white rounded-full p-2 flex items-center"}>
+                <div className="relative z-10 flex flex-col items-left space-y-3 text-white ">
+                    <div className={"border border-white rounded-full p-2 flex items-center "}>
                         SkyWave
                         <FaWind className="ml-2" />
                     </div>
 
-                    <p className="text-base  text-white font-thin hidden md:block">
+                    <p className="text-base  text-white font-thin hidden md:block ml-2">
                         Use the weather sharing feature to warm your family
                     </p>
                 </div>
@@ -110,7 +110,7 @@ export default function Benefits() {
                     fill
                     className="object-cover object-center absolute inset-0 rounded-xl "
                 />
-                <p className="relative  right-2 bottom-2 z-10  text-white border border-white rounded-full p-2 flex items-center">
+                <p className="absolute bottom-3 left-3 z-10 text-white border border-white rounded-full px-4 py-1">
                     sky-wave.com
                 </p>
             </div>

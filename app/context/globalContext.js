@@ -145,4 +145,3 @@ export const GlobalContextProvider = ({ children }) => {
 
 // Custom Hooks for Context Usage
 export const useGlobalContext = () => useContext(GlobalContext);
-export const useGlobalContextUpdate = () => useContext(GlobalContextUpdate);
