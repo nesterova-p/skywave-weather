@@ -7,15 +7,17 @@ import {useState} from "react";
 export default function SocialPanel({ variant, positionVariant }) {
     const [copied, setCopied] = useState(false);
 
-    const copyLink = async() => {
-        try{
-            await navigator.clipboard.writeText(window.location.href);
+    const copyLink = async () => {
+        try {
+            const currentURL = typeof location !== "undefined" ? location.href : "";
+            await navigator.clipboard.writeText(currentURL);
             setCopied(true);
             setTimeout(() => setCopied(false), 1000);
-        }catch(e){
+        } catch (e) {
             console.error("Failed to copy link", e);
         }
-    }
+    };
+
 
     // Which icon wrapper classes to use based on variant
     const iconWrapperClass =

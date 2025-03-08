@@ -81,9 +81,14 @@ export default function NavBar() {
                     <FaWind className="ml-2" />
                 </button>
                 {/* About (md+) */}
-                <button className="pill-desktop-icon" onClick={() => window.open("https://github.com/nott-po/skywave-weather", "_blank")}>
+                <a
+                    href="https://github.com/nott-po/skywave-weather"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pill-desktop-icon"
+                >
                     About
-                </button>
+                </a>
                 {/* Services (md+) */}
                 <button className="pill-desktop-icon">
                     Theme
