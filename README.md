@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SkyWave Weather
+
+SkyWave Weather is a comprehensive weather forecasting application designed to provide precise and up-to-date weather information tailored to your location. Whether you're planning your day or the week ahead, SkyWave ensures you stay informed about the weather conditions.
+
+## Features
+
+- **Accurate Local Forecasts**: Receive real-time weather updates specific to your location.
+- **Global Coverage**: Access weather information for cities worldwide, including major cities like Kyiv, Warsaw, London, Stockholm, and Berlin.
+- **Daily Outlooks**: Get morning and evening weather summaries to plan your activities effectively.
+- **User-Friendly Interface**: Navigate effortlessly through a clean and intuitive design.
 
 ## Getting Started
 
-First, run the development server:
+To explore SkyWave Weather:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Visit the Live Application**: Access the deployed application at [https://skywave-weather.vercel.app/](https://skywave-weather.vercel.app/).
+2. **Navigate the Interface**: Use the intuitive design to search for specific cities.
+3. **Explore Features**: Utilize the daily outlooks, global city forecasts, and sharing options to maximize your experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contributing
 
-You can start editing the page by modifying `app/page.jsx`. The page auto-updates as you edit the file.
+We welcome contributions to enhance SkyWave Weather:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Report Issues**: If you encounter any bugs or have suggestions, please open an issue on our GitHub repository.
+- **Feature Requests**: Suggest new features or improvements to existing ones by creating a feature request.
+- **Pull Requests**: Feel free to fork the repository, make changes, and submit pull requests for review.
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+SkyWave Weather is licensed under the [MIT License](LICENSE).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Acknowledgements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **OpenWeatherMap**: For providing reliable weather data.
+- **Vercel**: For seamless deployment and hosting services.
+- **Awsmd**: For the Weather Forecast Landing Page design that inspired interface.​
+- **Meteo Nix**: For design elements inspired by the Meteo Nix weather application.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
