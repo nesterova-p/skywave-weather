@@ -6,7 +6,7 @@ import { FaApple, FaGooglePlay, FaDownload, FaCloud, FaWind } from "react-icons/
 
 export default function Benefits() {
     return (
-        <div className="flex items-center m-10">
+        <div className="flex items-center m-10 benefits-section">
         <section className="relative w-full h-[500px] overflow-hidden bg-white ">
             <div className={"flex justify-between gap-x-6 px-8 h-full"}>
             {/* 1 */}
