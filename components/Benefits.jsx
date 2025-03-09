@@ -36,13 +36,13 @@ export default function Benefits() {
                     fill
                     className="object-cover object-center absolute inset-0 rounded-xl"
                 />
-                <div className="absolute right-2 bottom-2 z-10 flex flex-col  glass-white rounded-full shadow-md hidden md:block">
+                <div className="absolute right-2 bottom-2 z-10 flex flex-col  glass-black rounded-full shadow-md hidden md:block">
                     <div className="flex items-center space-x-2 ">
                         <a
                             href="https://www.apple.com/app-store/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="glass-white text-white p-1 m-1 rounded-full hover:scale-105 transition "
+                            className="glass-black text-white p-1 m-1 rounded-full hover:scale-105 transition "
                         >
                             <FaApple size={25} />
                         </a>
@@ -50,11 +50,11 @@ export default function Benefits() {
                             href="https://play.google.com/store"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="glass-white text-white p-2 rounded-full hover:scale-105 transition"
+                            className="glass-black text-white p-2 rounded-full hover:scale-105 transition"
                         >
                             <FaGooglePlay size={20} />
                         </a>
-                        <button className="glass-white text-white p-2 rounded-full hover:scale-105 transition">
+                        <button className="glass-black text-white p-2 rounded-full hover:scale-105 transition">
                             <FaDownload size={18} />
                         </button>
                     </div>

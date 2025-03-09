@@ -38,6 +38,10 @@ body {
   .glass-white {
     @apply bg-white/30 backdrop-blur-md border border-white/20;
   }
+
+  .glass-black {
+    @apply bg-black/30 backdrop-blur-md border border-black/20;
+  }
 }
 
 /* COMMON UTILITISSS */

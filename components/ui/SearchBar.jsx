@@ -52,6 +52,18 @@ export default function SearchBar() {
         setCityTemp(convertTemp(forecast.main.temp));
     }, [forecast, unit]);
 
+    function getAbbreviated(label) {
+        if (!label) return "Loading...";
+        const parts = label.split(",");
+        if (parts.length > 1) {
+            const city = parts[0].trim();
+            const country = parts[parts.length - 1].trim().slice(0, 2).toUpperCase();
+            return `${city} ${country}`;
+        }
+        return label;
+    }
+
+
 
     const handleSelection = (item) => {
         const { name, state, country, lat, lon } = item;
@@ -68,14 +80,15 @@ export default function SearchBar() {
             {/* Active Location pill */}
             <div className="location-info bg-white px-4 py-2 rounded-full shadow-md flex items-center gap-2">
                 <FaLocationArrow size={18} className="text-black" />
-                {cityTemp !== null ? (
-                        <span className="text-gray-700 font-medium">
-                            {selectedCityLabel || "Loading..."}, {cityTemp}{unit}
+                <span className="text-gray-700 font-medium">
+                    <span className="hidden sm:inline">
+                            {selectedCityLabel || "Loading..."}
                     </span>
-                    ) :
-                    (
-                        <span className="text-gray-700">No Data</span>
-                    )}
+                    <span className="sm:hidden">
+                            {getAbbreviated(selectedCityLabel)}
+                    </span>
+                    , {cityTemp}{unit}
+  <              /span>
             </div>
 
             {/* Search Button / Dialog */}
