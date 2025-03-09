@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import React, { useEffect } from "react";
 import { useGlobalContext } from "@/app/context/globalContext";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/shadcn/skeleton";
 
 function FlyToActiveCity({ cityCoord }) {
     const map = useMap();

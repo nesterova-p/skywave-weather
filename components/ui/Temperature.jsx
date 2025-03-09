@@ -11,7 +11,7 @@ import {
     FaCloudShowersHeavy, FaSmog,
 } from "react-icons/fa";
 import {FaCloudShowersWater, FaTornado} from "react-icons/fa6";
-import {Skeleton} from "@/components/ui/skeleton";
+import {Skeleton} from "@/components/ui/shadcn/skeleton";
 
 export default function Temperature() {
     const {forecast, unit} = useGlobalContext();

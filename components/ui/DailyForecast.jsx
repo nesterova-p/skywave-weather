@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
 import { useGlobalContext } from "@/app/context/globalContext";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/shadcn/skeleton";
 import moment from "moment";
 import { FaSun, FaCloudRain, FaSnowflake, FaCloud, FaCloudShowersHeavy, FaSmog } from "react-icons/fa";
 import { FaTornado, FaCloudShowersWater } from "react-icons/fa6";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/shadcn/carousel";
 
 export default function DailyForecast() {
     const { forecast, fiveDayForecast, unit } = useGlobalContext();

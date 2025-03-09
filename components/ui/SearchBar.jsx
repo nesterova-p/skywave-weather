@@ -9,7 +9,7 @@ import {
     DialogTitle,
     DialogTrigger,
     DialogClose,
-} from "@/components/ui/dialog";
+} from "@/components/ui/shadcn/dialog";
 import {
     Command,
     CommandInput,
@@ -17,7 +17,7 @@ import {
     CommandGroup,
     CommandItem,
     CommandEmpty,
-} from "@/components/ui/command";
+} from "@/components/ui/shadcn/command";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export default function SearchBar() {

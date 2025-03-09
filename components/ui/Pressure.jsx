@@ -1,7 +1,7 @@
 "use client";
 import { useGlobalContext } from "@/app/context/globalContext";
 import { FaTachometerAlt } from "react-icons/fa"; // Using FaTachometerAlt as gauge icon
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/shadcn/skeleton";
 import React from "react";
 
 export default function Pressure() {

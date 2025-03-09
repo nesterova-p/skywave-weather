@@ -1,7 +1,7 @@
 "use client";
 import { useGlobalContext } from "@/app/context/globalContext";
 import { FaEye } from "react-icons/fa"; // Using FaEye from react-icons instead of missing 'eye' icon
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/shadcn/skeleton";
 import React from "react";
 import {FaWater} from "react-icons/fa6";
 

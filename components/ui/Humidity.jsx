@@ -1,7 +1,7 @@
 "use client";
 import { useGlobalContext } from "@/app/context/globalContext";
 import { FaWater } from "react-icons/fa6"; // Using FaWater as an equivalent for "droplets"
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/shadcn/skeleton";
 import React from "react";
 
 export default function Humidity() {

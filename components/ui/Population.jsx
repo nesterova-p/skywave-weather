@@ -2,7 +2,7 @@
 import React from "react";
 import {FaUserGroup} from "react-icons/fa6";
 import {useGlobalContext} from "@/app/context/globalContext";
-import {Skeleton} from "@/components/ui/skeleton";
+import {Skeleton} from "@/components/ui/shadcn/skeleton";
 
 export default function Population() {
 

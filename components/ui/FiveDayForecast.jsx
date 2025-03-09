@@ -2,7 +2,7 @@
 import { useGlobalContext } from "@/app/context/globalContext";
 import { FaCalendarAlt } from "react-icons/fa";
 import React from "react";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/shadcn/skeleton";
 
 function convertTemp(kelvin, unit) {
     if (unit === "°C") {

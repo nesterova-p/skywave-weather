@@ -1,6 +1,6 @@
 "use client";
 import {useGlobalContext} from "@/app/context/globalContext";
-import {Skeleton} from "@/components/ui/skeleton";
+import {Skeleton} from "@/components/ui/shadcn/skeleton";
 import React from "react";
 import moment from "moment";
 import {FaSun} from "react-icons/fa";

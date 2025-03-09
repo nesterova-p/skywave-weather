@@ -2,8 +2,8 @@
 import {FaSun} from "react-icons/fa";
 import React from "react";
 import {useGlobalContext} from "@/app/context/globalContext";
-import {Skeleton} from "@/components/ui/skeleton";
-import {Progress} from "@/components/ui/progress";
+import {Skeleton} from "@/components/ui/shadcn/skeleton";
+import {Progress} from "@/components/ui/shadcn/progress";
 
 export default function UVIndex() {
     const {uvIndex} = useGlobalContext();

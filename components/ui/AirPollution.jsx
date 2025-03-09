@@ -2,9 +2,9 @@
 
 import React, {useState} from "react";
 import {useGlobalContext} from "@/app/context/globalContext";
-import {Skeleton} from "@/components/ui/skeleton";
+import {Skeleton} from "@/components/ui/shadcn/skeleton";
 import {FaCloudShowersWater, FaTemperatureHalf, FaTornado} from "react-icons/fa6";
-import {Progress} from "@/components/ui/progress";
+import {Progress} from "@/components/ui/shadcn/progress";
 
 export default function AirPollution() {
     const {airQuality} = useGlobalContext();

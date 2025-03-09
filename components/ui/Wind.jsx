@@ -3,7 +3,7 @@
 import { FaWind } from "react-icons/fa";
 import React from "react";
 import { useGlobalContext } from "@/app/context/globalContext";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/shadcn/skeleton";
 import Image from "next/image";
 
 export default function Wind() {

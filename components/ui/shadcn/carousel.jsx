@@ -6,7 +6,7 @@ import { cn } from "@/components/lib/utils.jsx"
 
 
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/shadcn/button"
 
 const CarouselContext = React.createContext(null)
 
