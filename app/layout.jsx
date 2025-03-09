@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import ThemeProviders from "../Providers/ThemeProviders.jsx";
 
 export default function RootLayout({ children }) {
@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
                 <NavBar/>
                 {children}
                 <Footer/>
+                <SpeedInsights />
             </main>
         </ThemeProviders>
         </body>
