@@ -5,7 +5,6 @@ import {
     FaApple,
     FaGooglePlay,
     FaDownload,
-    FaSearch,
     FaChevronDown, FaWind,
 } from "react-icons/fa";
 import { useGlobalContext } from "@/app/context/globalContext";

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { FaArrowRight, FaCloud, FaTimes } from "react-icons/fa";
 import { useState } from "react";
-// Import our new SocialPanel
 import SocialPanel from "@/components/SocialPanel";
 
 export default function HeroSection() {

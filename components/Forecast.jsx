@@ -35,7 +35,7 @@ export default function Forecast() {
                     <Population/>
                 </div>
                 <div className={"mapbox-ct mt-4 flex gap-4 "}>
-                    {/*<Map/>*/}
+                    <Map/>
                     <LargeCities/>
                 </div>
             </div>

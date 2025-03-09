@@ -1,7 +1,7 @@
 "use client";
 
 import { FaArrowRight, FaCloud } from "react-icons/fa";
-import SocialPanel from "@/components/SocialPanel"; // Reuse the same SocialPanel
+import SocialPanel from "@/components/SocialPanel"; // To reuse the same SocialPanel
 
 const DontGuess = () => {
     return (
